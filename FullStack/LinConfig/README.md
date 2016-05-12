@@ -28,7 +28,7 @@ This Project is managed by Matthew Bellissimo
 http://52.37.233.140/  
 
 * AWS-Server: 
-INSERT FULL AWS SERVER ADDRESS HERE
+ec2-52-37-233-140.us-west-2.compute.amazonaws.com
  
 ## Project Overview 
 
@@ -914,7 +914,6 @@ Reference: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-t
 
 ----------
 
---!!!!Start here
 
     
 ### K - Get OAUTH-LOGINS (Google+ and Facebook) working.
@@ -947,7 +946,7 @@ Reference: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-t
 3.  Open Apache `catalog.conf` file.
 
     ```
-    (venv) grader@ip-10-20-30-101:/var/www/Catalog/catalog$ sudo nano /etc/apache2/sites-available/catalog.conf
+    (venv) grader@ip-10-20-5-108:/var/www/Catalog/catalog$ sudo nano /etc/apache2/sites-available/catalog.conf
     ```
     
 4. Paste this in the nano editor for *catalog.conf*: `ServerAlias ec2-52-39-26.86.us-west-2.compute.amazonaws.com`
@@ -976,7 +975,7 @@ Reference: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-t
 5. Enable virtual host - catalog.conf
 
     ```
-    (venv) grader@ip-10-20-30-101:/var/www/Catalog/catalog$ sudo a2ensite catalog
+    (venv) grader@ip-10-20-5-108:/var/www/Catalog/catalog$ sudo a2ensite catalog
     ```
 
 6. To get Google+ authorization working, do this:
@@ -986,10 +985,10 @@ Reference: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-t
     (b) - Navigate to `Credentials`, and edit your `OAuth 2.0 client IDs` like so:
     
     ![oauth2](https://cloud.githubusercontent.com/assets/15114201/14838612/b00cfad8-0c12-11e6-96c3-b6fbd89bb086.png)
-    
+
 7. To get Facebook authorization working, do this:
 
-    (a) - Go to Facebood developers page: `https://developers.google.com/ and select your app.
+    (a) - Go to Facebood developers page: `https://developers.facebook.com/ and select your app.
     
     (b) - Go to settings and fill in your PUBLIC-IP-ADDRESS like so:
     
@@ -998,8 +997,8 @@ Reference: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-t
 8. You can install Monitor application:
 
     ```
-    (venv) grader@ip-10-20-30-101:/var/www/Catalog/catalog$ sudo apt-get install python-pip build-essential python-dev
-    (venv) grader@ip-10-20-30-101:/var/www/Catalog/catalog$ sido pip install Glancers
+    (venv) grader@ip-10-20-5-108:/var/www/Catalog/catalog$ sudo apt-get install python-pip build-essential python-dev
+    (venv) grader@ip-10-20-5-108:/var/www/Catalog/catalog$ sudo pip install glances
     ```
 
 
@@ -1013,19 +1012,19 @@ Reference: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-t
 1.  Install Fail2ban application:
 
     ```
-    grader@ip-10-20-30-101:~$ sudo apt-get install fail2ban
+    grader@ip-10-20-5-108:~$ sudo apt-get install fail2ban
     ```
     
 2.  Copy the default config file
 
     ```
-    grader@ip-10-20-30-101:~$ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+    grader@ip-10-20-5-108:~$ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
     ```
     
 3. Open `jail.local` and change the followinf default parameters:
 
     ```
-    grader@ip-10-20-30-101:~$ sudo nano /etc/fail2ban/jail.local
+    grader@ip-10-20-5-108:~$ sudo nano /etc/fail2ban/jail.local
     ```
     
 4.  Set the following parameters:
@@ -1040,13 +1039,13 @@ Reference: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-t
 5. Stop the service:
 
     ```
-    grader@ip-10-20-30-101:~$ sudo service fail2ban stop
+    grader@ip-10-20-5-108:~$ sudo service fail2ban stop
     ```
     
 6. Start the service again:
 
     ```
-    grader@ip-10-20-30-101:~$ sudo service fail2ban start
+    grader@ip-10-20-5-108:~$ sudo service fail2ban start
     ```
     
 ## FINALLY:
