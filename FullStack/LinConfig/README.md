@@ -169,7 +169,7 @@ Reference: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-t
     (b) - Open an editer and insert the following line into the file
 
 	```
-	grader ALL=(ALL) NOPASSWD:ALL
+	grader ALL=(ALL:ALL) ALL
     ```
 
     ```
@@ -202,6 +202,8 @@ Reference :[Ask Ubuntu](http://askubuntu.com/questions/16650/create-a-new-ssh-us
     (b) - Change `Port 22` to `Port 2200`.
 
     (c) - Make sure  `PasswordAuthentication` is set to `no`
+
+    (d) - Change PermitRootLogin without-password to PermitRootLogin no
 
     (f) - Save and Exit nano editor. Restart SSH service for changes.
     
